@@ -102,6 +102,107 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    //console log
+    errorBtns[0].addEventListener('click', e => {
+      e.preventDefault();
+      console.log("Console Log Demo");
+    });
+
+    //console error
+    errorBtns[1].addEventListener('click', e => {
+      e.preventDefault();
+      console.error("Console Error Demo");
+    });
+
+    //console count
+    let count = 0;
+    errorBtns[2].addEventListener('click', e => {
+      count = count + 1;
+      console.log(`Count Button: ${count}`);
+    });
+
+    //console warn
+    errorBtns[3].addEventListener('click', e => {
+      console.warn(`Console Warn Button`);
+    });
+
+    //console assert
+    const number = 2;
+    const errorMsg = "The number does not equal 3"
+    errorBtns[4].addEventListener('click', e => {
+      console.assert(number === 3, '%o', { number, errorMsg });
+    });
+
+    //console clear
+    errorBtns[5].addEventListener('click', e => {
+      console.clear();
+    });
+
+    //console dir
+    errorBtns[6].addEventListener('click', e => {
+      console.dir(errorBtns[6]);
+    });
+
+    //console dirxml
+    errorBtns[7].addEventListener('click', e => {
+      console.dirxml(errorBtns[7]);
+    });
+
+    //console group start
+    errorBtns[8].addEventListener('click', e => {
+      console.group("console.group");
+    });
+
+    //console group end
+    errorBtns[9].addEventListener('click', e => {
+      console.groupEnd();
+    });
+
+    //console table
+    function Course(name, num) {
+      this.name = name;
+      this.num = num;
+    }
+
+    const se = new Course("Software Engineering", 110);
+    const pl = new Course("Programming Languages: Principles and Paradigms", 130);
+    const as = new Course("Advanced Software Engineering", 112);
+
+    errorBtns[10].addEventListener('click', e => {
+      console.table([se, pl, as]);
+    });
+
+    //timer start
+    errorBtns[11].addEventListener('click', e => {
+      console.time("Timer Button");
+    });
+
+    //timer end
+    errorBtns[12].addEventListener('click', e => {
+      console.timeEnd("Timer Button");
+    });
+
+    //console trace
+    function deep() {
+      console.trace();
+    }
+
+    function deeper() {
+      deep();
+    }
+
+    function deepest() {
+      deeper();
+    }
+
+    errorBtns[13].addEventListener("click", function(){ handleBtnClick(); });
+
+    function handleBtnClick() { 
+      deepest(); 
+    }
+
+    
+
   </script>
 </body>
 
