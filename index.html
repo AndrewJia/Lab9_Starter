@@ -216,7 +216,14 @@
       deepest(); 
     }
 
-    
+    //global error
+    errorBtns[14].addEventListener('click', e => {
+      throw boom;
+    });
+
+    window.addEventListener("error", (event) => {
+      console.log("Sadly an error happened my friend");
+    });
 
   </script>
 </body>
