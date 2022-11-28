@@ -87,6 +87,15 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "fc1a37ff3cd04765ab0c3d72ffaaccc9"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+                        
+
   <script>
     class NumberError extends Error {
       constructor(message) {
@@ -222,6 +231,8 @@
     });
 
     window.addEventListener("error", (event) => {
+      TrackJS.track('Testing TrackJS!');
+                        
       console.log("Sadly an error happened my friend");
     });
 
